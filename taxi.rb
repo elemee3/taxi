@@ -11,10 +11,32 @@ class Taxi
   end
 
   def pickup(rider)
-    @riders << rider
+    if @open_seats > 0
+      @riders << rider
+      return true
+    else
+      return false
+    end
   end
 
   def dropoff(rider)
     @riders.shift()
+  end
+end
+
+class Taxi_Service
+  def initialize
+    @rider_queue = []
+    @taxi_queue = []
+  end
+
+  def add_rider
+
+  end
+
+  def add_taxi
+  end
+
+  def assign_taxi
   end
 end

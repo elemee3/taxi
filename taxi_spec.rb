@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative 'taxi'
+# require_relative 'taxi_service'
 
 describe Taxi do
   before do
@@ -47,5 +48,36 @@ describe Taxi do
     @taxi.pickup("rider")
     @taxi.dropoff("rider")
     expect(@taxi.riders).to eq([])
+  end
+end
+
+describe Taxi_Service do
+  before do
+    @service = Taxi_Service.new()
+  end
+# taxi service exists, can be created
+  it "can create new instances" do
+    expect{Taxi_Service.new}.to_not raise_error
+  end
+# taxi service has an add_rider method
+  it "has an add_rider method" do
+    expect(@service).to respond_to(:add_rider)
+  end
+# taxi service has an add_rider method that reduces rider_queue by 1
+  it "" do
+  end
+# taxi service has an add_taxi method
+  it "has an add_taxi method" do
+    expect(@service).to respond_to(:add_taxi)
+  end
+# taxi service has an add_rider method that reduces rider_queue by 1
+  it "" do
+  end
+# taxi service has an assign_taxi method
+  it "has an assign_taxi method" do
+    expect(@service).to respond_to(:assign_taxi)
+  end
+# taxi service has an add_rider method that reduces rider_queue by 1
+  it "" do
   end
 end
